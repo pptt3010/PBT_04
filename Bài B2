@@ -1,0 +1,219 @@
+HTML
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Flexbox Layout</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+  <nav class="navbar">
+
+    <div class="logo">LOGO</div>
+
+    <ul class="menu">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Products</a></li>
+      <li><a href="#">About</a></li>
+    </ul>
+
+    <div class="auth">
+      <a href="#">Login</a>
+      <a href="#">Register</a>
+    </div>
+
+  </nav>
+
+  <!-- ================= PRODUCT GRID ================= -->
+  <div class="container">
+
+    <!-- CARD 1 -->
+    <div class="card">
+      <img src="https://via.placeholder.com/300x200">
+      <h3>Product 1</h3>
+      <p class="price">99.000đ</p>
+      <button>Mua</button>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="card">
+      <img src="https://via.placeholder.com/300x200">
+      <h3>Product 2</h3>
+      <p class="price">120.000đ</p>
+      <button>Mua</button>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="card">
+      <img src="https://via.placeholder.com/300x200">
+      <h3>Product 3</h3>
+      <p class="price">150.000đ</p>
+      <button>Mua</button>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="card">
+      <img src="https://via.placeholder.com/300x200">
+      <h3>Product 4</h3>
+      <p class="price">80.000đ</p>
+      <button>Mua</button>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="card">
+      <img src="https://via.placeholder.com/300x200">
+      <h3>Product 5</h3>
+      <p class="price">110.000đ</p>
+      <button>Mua</button>
+    </div>
+
+    <!-- CARD 6 -->
+    <div class="card">
+      <img src="https://via.placeholder.com/300x200">
+      <h3>Product 6</h3>
+      <p class="price">130.000đ</p>
+      <button>Mua</button>
+    </div>
+
+    <!-- CARD 7 -->
+    <div class="card">
+      <img src="https://via.placeholder.com/300x200">
+      <h3>Product 7</h3>
+      <p class="price">90.000đ</p>
+      <button>Mua</button>
+    </div>
+
+    <!-- CARD 8 -->
+    <div class="card">
+      <img src="https://via.placeholder.com/300x200">
+      <h3>Product 8</h3>
+      <p class="price">200.000đ</p>
+      <button>Mua</button>
+    </div>
+
+  </div>
+
+</body>
+</html>
+
+
+
+CSS:
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  padding: 0 20px;
+  background: #222;
+}
+
+/* LOGO */
+.logo {
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* MENU GIỮA */
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  padding-bottom: 3px;
+  transition: 0.2s;
+}
+
+/* hover navbar */
+.menu a:hover {
+  color: #00d4ff;
+  border-bottom: 2px solid #00d4ff;
+}
+
+/* AUTH */
+.auth {
+  display: flex;
+  gap: 15px;
+}
+
+.auth a {
+  color: white;
+  text-decoration: none;
+  border: 1px solid white;
+  padding: 6px 10px;
+  border-radius: 4px;
+  transition: 0.2s;
+}
+
+.auth a:hover {
+  background: white;
+  color: #222;
+}
+
+/* ================= PRODUCT GRID ================= */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* CARD (4 CỘT) */
+.card {
+  flex: 0 0 calc(25% - 20px);
+  display: flex;
+  flex-direction: column;
+
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  background: white;
+
+  transition: 0.3s;
+}
+
+/* IMAGE */
+.card img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+/* PRICE */
+.price {
+  color: red;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+/* BUTTON luôn ở đáy */
+.card button {
+  margin-top: auto;
+  padding: 8px;
+  border: none;
+  background: #222;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* HOVER CARD */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
