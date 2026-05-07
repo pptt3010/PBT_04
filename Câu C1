@@ -1,0 +1,34 @@
+1. Navigation bar ngang (logo + menu + buttons)
+
+ Dùng: Flexbox
+
+Giải thích:
+Navbar là bố cục 1 chiều theo hàng ngang (trái → phải). Flexbox phù hợp để căn chỉnh các phần tử theo 1 trục, dễ dùng justify-content: space-between để chia logo - menu - buttons.
+
+2. Lưới ảnh Instagram (3 cột đều nhau, số ảnh không biết trước)
+
+ Dùng: Grid
+
+Giải thích:
+Instagram grid là layout 2 chiều (cả hàng và cột), số lượng ảnh thay đổi linh hoạt. CSS Grid phù hợp để tạo lưới đều nhau với repeat(3, 1fr) và tự động xuống dòng.
+
+3. Layout blog: main content + sidebar
+
+ Dùng: Grid (hoặc kết hợp Grid + Flexbox)
+
+Giải thích:
+Đây là layout 2 cột rõ ràng (sidebar + content), nên Grid phù hợp để chia layout tổng thể. Có thể kết hợp Flexbox bên trong từng khu vực để căn chỉnh nội dung nhỏ.
+
+4. Footer với 4 cột thông tin
+
+ Dùng: Grid (hoặc Flexbox cũng được)
+
+Giải thích:
+Footer là bố cục nhiều cột cố định. Grid giúp chia đều 4 cột dễ dàng bằng repeat(4, 1fr). Flexbox cũng dùng được nhưng Grid dễ kiểm soát layout hơn.
+
+5. Card sản phẩm (ảnh trên, text giữa, nút dưới — nút luôn dính đáy)
+
+ Dùng: Flexbox
+
+Giải thích:
+Card là bố cục 1 chiều theo cột. Flexbox với flex-direction: column giúp sắp xếp ảnh → text → nút. Dùng margin-top: auto để đẩy nút xuống đáy card.
