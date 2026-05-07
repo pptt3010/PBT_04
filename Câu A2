@@ -1,0 +1,103 @@
+TRƯỜNG HỢP 1
+.container { display: flex; }
+.item { flex: 1; }
+
+4 items
+
+Kết quả:
+
+1 hàng ngang
+4 cột bằng nhau
+
+Sơ đồ:
+| 1 | 2 | 3 | 4 |
+
+TRƯỜNG HỢP 2
+.container { display: flex; flex-wrap: wrap; }
+.item { width: 45%; margin: 2.5%; }
+
+6 items
+
+Phân tích:
+
+mỗi item gần 50% chiều rộng
+1 hàng chứa 2 item
+tổng 6 item
+
+Kết quả:
+
+3 hàng
+2 cột
+
+Sơ đồ:
+| 1 | 2 |
+| 3 | 4 |
+| 5 | 6 |
+
+TRƯỜNG HỢP 3
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+3 items
+
+Phân tích:
+
+space-between: dàn đều ngang
+align-items center: căn giữa dọc
+
+Kết quả:
+
+1 hàng ngang
+item dàn đều trái giữa phải
+
+Sơ đồ:
+| 1 2 3 |
+
+TRƯỜNG HỢP 4
+.container {
+  display: grid;
+  grid-template-columns: 200px 1fr 200px;
+  gap: 20px;
+}
+
+3 items
+
+Phân tích:
+
+3 cột: trái 200px, giữa linh hoạt, phải 200px
+
+Kết quả:
+
+1 hàng
+3 cột cố định + co giãn
+
+Sơ đồ:
+| 200px | 1fr | 200px |
+| 1 | 2 | 3 |
+
+TRƯỜNG HỢP 5
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+7 items
+
+Phân tích:
+
+3 cột mỗi hàng
+7 item chia theo hàng
+
+Kết quả:
+
+3 hàng
+hàng cuối thiếu 2 ô
+
+Sơ đồ:
+| 1 | 2 | 3 |
+| 4 | 5 | 6 |
+| 7 | | |
