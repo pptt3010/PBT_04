@@ -1,0 +1,10 @@
+| Position | Vẫn chiếm chỗ trong flow? | Tham chiếu vị trí           | Cuộn theo trang?    | Use case                              |
+| -------- | ------------------------- | --------------------------- | ------------------- | ------------------------------------- |
+| static   | ✔ Có                      | Không có (mặc định)         | ✔ Có                | Layout bình thường                    |
+| relative | ✔ Có                      | Chính nó (vị trí ban đầu)   | ✔ Có                | Dịch nhẹ vị trí, làm gốc cho absolute |
+| absolute | ✖ Không                   | nearest positioned ancestor | ✖ Không             | Tooltip, badge, overlay               |
+| fixed    | ✖ Không                   | viewport (màn hình)         | ✖ Không             | Navbar cố định, popup                 |
+| sticky   | ✔ Có (trước khi dính)     | nearest scroll container    | ✔ Có (đến khi dính) | Header dính khi scroll                |
+
+
+absolute tham chiếu body khi không có ancestor nào có position khác static
