@@ -1,0 +1,74 @@
+ Lỗi 1: Cards không đều chiều cao → nút “Mua” bị nhảy lên/xuống
+ Nguyên nhân:
+
+Các .card có nội dung dài ngắn khác nhau (text, ảnh), nhưng không có cơ chế kéo nút xuống đáy, nên nút .btn bị lệch vị trí giữa các card.
+
+ Cách sửa:
+
+Dùng flex theo cột + đẩy nút xuống đáy bằng margin-top: auto
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+.card {
+    width: 30%;
+    margin: 1.5%;
+    display: flex;
+    flex-direction: column;
+}
+
+.card img {
+    width: 100%;
+}
+
+.card h3 {
+    font-size: 18px;
+}
+
+.card .btn {
+    padding: 10px;
+    margin-top: auto;
+}
+ Lỗi 2: Không căn giữa ngang + dọc trong hero
+ Nguyên nhân:
+
+Chỉ có display: flex nhưng thiếu:
+
+justify-content (căn ngang)
+align-items (căn dọc)
+ Cách sửa:
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-content {
+    text-align: center;
+}
+ Lỗi 3: Sidebar bị co lại khi content dài
+ Nguyên nhân:
+
+Flex item .sidebar bị phép co (default flex-shrink: 1) nên khi .content dài, sidebar bị ép nhỏ lại.
+
+ Cách sửa:
+
+Khóa chiều rộng sidebar + chống co:
+
+.layout {
+    display: flex;
+}
+
+.sidebar {
+    width: 250px;
+    flex-shrink: 0;
+}
+
+.content {
+    flex: 1;
+}
+
