@@ -1,0 +1,171 @@
+HTML
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>E-Commerce Grid Layout</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="layout">
+
+    <!-- HEADER -->
+    <header class="header">HEADER</header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-main">
+        <h2>🔥 Big Sale 50%</h2>
+        <p>Deal hot hôm nay</p>
+      </div>
+
+      <div class="hero-feature">
+        Featured Product
+      </div>
+    </section>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <h3>Filter</h3>
+      <label><input type="checkbox"> Giá rẻ</label><br>
+      <label><input type="checkbox"> Hot</label><br>
+      <label><input type="checkbox"> Sale</label>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main">
+
+      <div class="card">Product 1</div>
+      <div class="card">Product 2</div>
+      <div class="card">Product 3</div>
+      <div class="card">Product 4</div>
+      <div class="card">Product 5</div>
+      <div class="card">Product 6</div>
+
+    </main>
+
+    <!-- ADS -->
+    <aside class="ads">
+      ADS BANNER
+    </aside>
+
+    <!-- FOOTER -->
+    <footer class="footer">FOOTER</footer>
+
+  </div>
+
+</body>
+</html>
+
+
+
+
+CSS:
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ================= GRID LAYOUT ================= */
+.layout {
+  display: grid;
+
+  /* 3 cột: sidebar - main - ads */
+  grid-template-columns: 200px 1fr 200px;
+
+  /* hàng tự động */
+  grid-template-rows: auto auto 1fr auto;
+
+  gap: 15px;
+  padding: 15px;
+
+  min-height: 100vh;
+
+  /* BONUS: named areas */
+  grid-template-areas:
+    "header header header"
+    "hero hero hero"
+    "sidebar main ads"
+    "footer footer footer";
+}
+
+/* ================= AREAS ================= */
+.header {
+  grid-area: header;
+  background: #222;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.hero {
+  grid-area: hero;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 10px;
+}
+
+.hero-main {
+  background: #f5f5f5;
+  padding: 20px;
+}
+
+.hero-feature {
+  background: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* SIDEBAR */
+.sidebar {
+  grid-area: sidebar;
+  background: #fafafa;
+  padding: 15px;
+}
+
+/* ADS */
+.ads {
+  grid-area: ads;
+  background: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* MAIN PRODUCT GRID */
+.main {
+  grid-area: main;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+/* PRODUCT CARD */
+.card {
+  background: white;
+  border: 1px solid #ddd;
+  padding: 20px;
+  text-align: center;
+
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* FOOTER */
+.footer {
+  grid-area: footer;
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
